@@ -24,7 +24,7 @@ end
   Answer.create!(question_id: question_objects[i].id)
 end
 
-3.times do |i|
-  TraveledTest.create!(user_id: users_object[i].id, test_id: test_objects[i].id )
-end
-  TraveledTest.create!(user_id: users_object[0].id, test_id: test_objects[1].id )
+# 3.times do |i|
+#   TraveledTest.create!(user_id: users_object[i].id, test_id: test_objects[i].id )
+# end
+#   TraveledTest.create!(user_id: users_object[0].id, test_id: test_objects[1].id )
