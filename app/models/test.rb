@@ -1,25 +1,33 @@
 class Test < ApplicationRecord
   belongs_to :category
-  belongs_to :user#, class_name: "User", foreign_key: :author_id
-  
+  belongs_to :author, class_name: "User"
+
   has_many :questions, dependent: :destroy
   has_many :tests_users, dependent: :destroy
   has_many :users, through: :tests_users
 
+  scope :by_category, ->(title) { joins(:category)
+                                  .where(categories: { title: title })
+                                  .order(title: :desc)
+                                }
 
-  # has_many :traveled_tests
+  scope :easy, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
 
-  def self.by_category(title)
-    id = Category.find_by(title: title).id
-    where(category_id: 1).order(title: :desc).pluck(:title)
-    
+  validates :title, presence: true#, uniqueness: { scope: :level }
+  validates :level, presence: true, 
+                    numericality: { only_integer: true, greater_than_or_equal_to: 1 } 
+  validates :author, presence: true
+  validate :one_title_one_level
+
+
+  def self.with_category(title)
+    by_category(title).pluck(:title)
   end
-  
-  # scope :by_category, ->(title) do 
-  #   joins(:category).where(categories: { title: title }).order(title: :desc)
-  # end
 
-  # def self.with_category(title)
-  #   by_category(title).pluck(:title)
-  # end
+  def one_title_one_level
+    errors.add(:title)if self.class.where(":level = ? AND :title = ?", level, title).count > 1
+  end
+
 end
