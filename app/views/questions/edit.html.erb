@@ -1,0 +1,5 @@
+<h1>Редактировать вопрос <%= question_header(@question) %></h1>
+
+<%= render 'form' %>
+<%= link_to 'Назад', test_path(@question.test) %> |
+<%= link_to 'Все тесты', tests_path %> 

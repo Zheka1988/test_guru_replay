@@ -1,6 +1,6 @@
 class Test < ApplicationRecord
   belongs_to :category
-  belongs_to :author, class_name: "User"
+  belongs_to :author, class_name: "User"#, foreign_key: :author_id
 
   has_many :questions, dependent: :destroy
   has_many :tests_users, dependent: :destroy
@@ -27,7 +27,7 @@ class Test < ApplicationRecord
   end
 
   def one_title_one_level
-    errors.add(:title)if self.class.where(":level = ? AND :title = ?", level, title).count > 1
+    errors.add(:title) if self.class.where(":level = ? AND :title = ?", level, title).count > 1
   end
 
 end
