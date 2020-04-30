@@ -1,7 +1,7 @@
 <h1>Тест <%= @test_passage.test.title %> был завершен</h1>
 
 <h4>Ваш результат:</h4> 
-<% result = @test_passage.result(@test_passage.test) %>
+<% result = @test_passage.result %>
 <% if result >= 85 %>
   <p class='text-success'>Успешно - <%= result %></p>
 <% else %>
