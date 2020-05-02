@@ -10,7 +10,15 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <p class ="nav user">Welcome, <b><%=current_user.name.capitalize %></b> in <%= link_to 'Guru', tests_path %></p>
+      <%= render 'shared/header_in' %>
+    <% else %>
+      <%= render 'shared/header_out' %>
+    <% end %>
+    
     <%= yield %>
+
     <%= render 'shared/footer' %>
   </body>
 </html>

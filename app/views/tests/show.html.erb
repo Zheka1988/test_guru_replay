@@ -12,7 +12,7 @@
 
 <p>
   <strong>Автор:</strong>
-  <%= User.find(@test.author_id).name%>
+  <%= User.find(@test.author_id).email%>
 </p>
 
 <%= link_to 'Редактировать', edit_test_path(@test) %> |
