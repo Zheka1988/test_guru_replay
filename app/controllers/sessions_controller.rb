@@ -19,10 +19,4 @@ class SessionsController < ApplicationController
       redirect_to login_path
     end
   end
-
-  private
-
-  def set_user
-
-  end
 end
