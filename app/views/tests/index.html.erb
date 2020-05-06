@@ -1,14 +1,14 @@
 <h1>Все тесты</h1>
 
-<%= link_to 'Создать новый тест', new_test_path %>
 <table>
   <tr>
     <th>Название теста</th>
     <th>Уровень</th>
+    <th>Автор</th>
     <th>Вопросы</th>
-    <th colspan="4">Действия</th>
+    <th>Действия</th>
   </tr>
-  <%= render partial: "shared/test", collection: @tests %>
+  <%= render @tests %>
 
 </table>
 

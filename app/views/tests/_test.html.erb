@@ -1,0 +1,9 @@
+<p>
+  <tr>
+    <td><%= test.title %></td>
+    <td><%= test.level %></td>
+    <td> <%= User.find(test.author_id).email %> </td>    
+    <td><%= test.questions.count %></td>
+    <td><%= button_to 'Start', start_test_path(test) %></td>
+  </tr>  
+</p>
