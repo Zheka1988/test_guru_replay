@@ -1,0 +1,16 @@
+<p>
+  <strong>Вопрос:</strong>
+  <%= @question.body %>
+</p>
+
+<%= link_to 'Редактировать', edit_admin_question_path(@question) %> |
+<%= link_to 'Назад', admin_test_path(@question.test_id) %>
+
+<h3>Список ответов:</h3>
+
+<ol type="A">
+  <%= render @question.answers %>
+</ol>
+
+<%= link_to 'Создать ответ', new_admin_question_answer_path(@question) %>
+
