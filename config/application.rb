@@ -20,8 +20,9 @@ module TestGuruReplay
     # the framework and any gems in your application.
 
     config.time_zone = "Astana"
+    config.i18n.available_locales = [:ru, :en] 
+    config.i18n.default_locale = :ru
 
-    config.i18n.default_locale = :en
     # config.i18n.fallbacks = {'ru' => 'en'}
 
     # config.before_initialize { TestGuruReplay::VERSION }
