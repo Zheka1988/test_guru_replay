@@ -31,3 +31,82 @@
 
 en:
   hello: "Hello world"
+
+  tests:
+    index:
+      header: 'All tests'
+      title: 'Title'
+      level: 'Level'
+      author: 'Author'
+      questions: 'Questions'
+      action: 'Action'
+      start: 'Start'
+
+  admin:
+    tests:
+      index:
+        not_autorized: 'You are not authorized to view this page.'
+        header: 'All tests'
+        create_test: 'Create new test'
+        title: 'Title'
+        level: 'Level'  
+        questions: 'Questions'
+        action: 'Action'
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'    
+      create:
+        success: 'Test was created'
+      update:
+        success: 'Test was updated'
+      new:
+        header: 'Create new test'
+      edit:
+        header: 'Edit test'
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+    select:
+      prompt: "Select category"
+
+  shared:
+    errors:
+      header:
+        one: “%{count} error detected”
+        other: “%{count} errors detected”
+
+  activerecord:
+    # errors:
+    #   models:
+    #     test:
+    #       attributes:
+    #         title:
+    #           blank: 'Не может быть пустым'
+    errors:
+      messages:
+        blank: "Can't be blanl"
+
+    models:
+      test: 'Test'
+
+    attributes:
+      test:
+        title: "Title"
+        level: "Level"
+        category: "Category"
+
+  test_passages:
+    result:
+      header: "The %{title} test was completed"
+
+  tests_mailer:
+    completed_test:
+      subject: 'You just completed the TestGuru test!'
