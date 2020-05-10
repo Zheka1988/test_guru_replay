@@ -1,6 +1,6 @@
 class SessionsController < Devise::SessionsController
   def create
     super
-    flash.notice = "Привет, #{current_user.full_name}!"
+    flash[:success] = "Привет, #{current_user.username}!"
   end
 end

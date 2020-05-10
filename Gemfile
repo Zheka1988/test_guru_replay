@@ -29,6 +29,8 @@ gem 'devise', '~> 4.0'
 gem 'rails-i18n', '>= 5.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.4.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

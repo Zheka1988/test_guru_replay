@@ -4,6 +4,6 @@
     <td><%= test.level %></td>
     <td> <%= User.find(test.author_id).email %> </td>    
     <td><%= test.questions.count %></td>
-    <td><%= button_to t('tests.index.start'), start_test_path(test) %></td>
+    <td><%= button_to t('tests.index.start'), start_test_path(test) , class: 'btn btn-outline-secondary btn-sm' %></td>
   </tr>  
 </p>
