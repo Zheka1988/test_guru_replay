@@ -1,0 +1,7 @@
+<p>
+  <tr>
+    <td class= "bg-light"><%= link_to "#{gist.question.body[0,25]}", admin_question_path(gist.question), class: 'text-dark' %></td>
+    <td><%= link_to "#{gist.url.split('/').last}", gist.url, class: 'text-dark' %></td>
+    <td><%= gist.user.email %></td>
+  </tr>  
+</p>

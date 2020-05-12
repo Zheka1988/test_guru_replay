@@ -15,6 +15,9 @@
           <%= b.check_box id: "answer_ids_#{b.object_id}" %>
           <%= b.label id: "answer_ids_#{b.object.id}" %> <br>
         <% end %>
+
+        <p><%= link_to 'Gist', gist_test_passage_path(@test_passage), method: :post, class: 'text-info' %></p>
+
         <p><%= f.submit 'Далее', class: 'btn btn-outline-primary btn-sm' %></p>
       <% end %>
     </div>

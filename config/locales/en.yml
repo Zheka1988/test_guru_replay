@@ -64,6 +64,12 @@ en:
         header: 'Create new test'
       edit:
         header: 'Edit test'
+  
+    gists:
+      index:
+        url: 'Links'
+        questions: 'Questions'
+        author: 'Authors'
 
   helpers:
     submit:
@@ -107,6 +113,9 @@ en:
   test_passages:
     result:
       header: "The %{title} test was completed"
+    gist:
+      success: 'Gist was created'
+      failure: 'Gist was not created'
 
   tests_mailer:
     completed_test:

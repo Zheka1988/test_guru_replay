@@ -32,6 +32,12 @@ ru:
         header: 'Создать новый тест'
       edit:
         header: 'Редактировать тест'
+  
+    gists:
+      index:
+        url: 'Ссылки'
+        questions: 'Вопросы'
+        author: 'Авторы'
 
   helpers:
     submit:
@@ -79,6 +85,9 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
+    gist:
+      success: "Гист был создан. Можете посмотреть, перейдя по ссылке: %{link}"
+      failure: 'Гист не создан'    
 
   tests_mailer:
     completed_test:
