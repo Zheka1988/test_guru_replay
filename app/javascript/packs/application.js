@@ -5,11 +5,14 @@
 
 require("@rails/ujs").start()
 require("turbolinks").start()
-require("jquery3").start()
-require("popper").start()
-require("bootstrap-sprockets").start()
+// require("jquery3").start()
+// require("popper").start()
+// require("bootstrap-sprockets").start()
 require("@rails/activestorage").start()
 require("channels")
+require("jquery")
+require("packs/sorting")
+require("packs/pass_match_registry")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
