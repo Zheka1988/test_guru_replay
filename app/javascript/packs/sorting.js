@@ -10,7 +10,7 @@ function sortRowsByTitle() {
   var rows = table.querySelectorAll('tr')
   var sortedRows = []
 
-  for (var i=1; i < rows.length; i++) {
+  for (var i = 1; i < rows.length; i++) {
     sortedRows.push(rows[i])
   }
 
@@ -31,14 +31,21 @@ function sortRowsByTitle() {
   for(i = 0; i < tableClasses.length; i++) {
     sortedTable.classList.add(tableClasses[i])   
   }
+  
+  var header = sortedTable.createTHead()
+  header.classList.add('text-center')
+  header.classList.add('thead-dark')
 
-  rows[0].classList.add('text-center')
-  rows[0].classList.add('thead-dark')
-  sortedTable.appendChild(rows[0])
+  header.appendChild(rows[0])
+
+  sortedTable.appendChild(header)
+
+  var tbody = document.createElement("TBODY")
 
   for(var i=0; i < sortedRows.length; i++) {
-    sortedTable.appendChild(sortedRows[i])
+    tbody.appendChild(sortedRows[i])
   }
+  sortedTable.appendChild(tbody)
 
   table.parentNode.replaceChild(sortedTable, table)
 
