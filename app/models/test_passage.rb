@@ -9,6 +9,14 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
   
+  def total_questions_count
+    test.questions.count
+  end
+  
+  def progress
+    (self.number_current_question / self.test.questions.count.to_f)
+  end
+
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.current_question = next_question

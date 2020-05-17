@@ -1,6 +1,4 @@
 <% flash.each do |key, message| %>
-  <div class="alert alert-success" role="alert">
-    <%= content_tag :div, message, class: "alert alert-#{key}" %>
-  </div>
+  <%= content_tag :div, message, class: "flash #{key}" %>
 <% end %>
 

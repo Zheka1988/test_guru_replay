@@ -21,5 +21,14 @@
         <p><%= f.submit 'Далее', class: 'btn btn-outline-primary btn-sm' %></p>
       <% end %>
     </div>
+
+    <%= content_tag :div, class: 'myProgress' do %>
+        <%= content_tag :div,
+                class: ['progress-bar', 'bg-success'],
+                value: @test_passage.number_current_question,
+                max: @test_passage.total_questions_count do %>
+        <% end %>
+    <% end %>
+
   </div>
 </div>

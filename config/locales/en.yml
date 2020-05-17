@@ -64,7 +64,9 @@ en:
         header: 'Create new test'
       edit:
         header: 'Edit test'
-  
+      form_inline:
+        submit: 'Ok'  
+          
     gists:
       index:
         url: 'Links'

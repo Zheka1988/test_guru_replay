@@ -32,6 +32,8 @@ ru:
         header: 'Создать новый тест'
       edit:
         header: 'Редактировать тест'
+      form_inline:
+        submit: 'Ok'  
   
     gists:
       index:
