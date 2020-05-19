@@ -27,7 +27,7 @@ class Test < ApplicationRecord
   end
 
   def one_title_one_level
-    errors.add(:title) if self.class.where(":level = ? AND :title = ?", level, title).count > 1
+    errors.add(:title) if self.class.where("level = ? AND title = ?", level, title).count > 1
   end
 
 end
