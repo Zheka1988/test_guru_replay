@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
   has_many :gists
   has_many :feedbacks
+  has_many :user_badges
+  has_many :badges, through: :user_badges
 
   scope :tests_by_level, ->(level) { tests.where(level: level)}
   

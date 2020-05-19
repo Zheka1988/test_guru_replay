@@ -2,7 +2,7 @@
 
 <h4>Ваш результат:</h4> 
 <% result = @test_passage.result %>
-<% if result >= 85 %>
+<% if @test_passage.passed? %>
   <p class='text-success'>Успешно - <%= result %></p>
 <% else %>
   <p class='text-danger' >Не успешно - <%= result %></p>
