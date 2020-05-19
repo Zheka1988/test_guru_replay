@@ -25,4 +25,8 @@ Rails.application.routes.draw do
     get 'gists/index'
   end
 
+  resources :feedbacks, only: %i[new create]
+
+  get 'feedbacks/new'
+  get 'feedbacks/create'
 end

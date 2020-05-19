@@ -122,3 +122,9 @@ en:
   tests_mailer:
     completed_test:
       subject: 'You just completed the TestGuru test!'
+
+  feedbacks:
+    create:
+      success: 'Appeal sent'
+    new:
+      title: 'Feedback form'

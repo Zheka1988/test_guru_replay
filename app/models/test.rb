@@ -20,14 +20,10 @@ class Test < ApplicationRecord
   validates :level, presence: true, 
                     numericality: { only_integer: true, greater_than_or_equal_to: 1 } 
   validates :author, presence: true
-  validate :one_title_one_level
+
+  validates :title, uniqueness: { scope: :level}
 
   def self.with_category(title)
     by_category(title).pluck(:title)
   end
-
-  def one_title_one_level
-    errors.add(:title) if self.class.where("level = ? AND title = ?", level, title).count > 1
-  end
-
 end
