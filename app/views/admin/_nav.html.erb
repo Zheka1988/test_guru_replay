@@ -4,6 +4,9 @@
   <span class="navbar-text">
      Welcome, <b>
      <%=current_user.email %></b>
-     Guru | <%= link_to 'Users Panel', root_path %> | <%= link_to 'Gists', admin_gists_index_path %> | <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+     Guru | <%= link_to 'Users Panel', root_path %> | 
+     <%= link_to 'Gists', admin_gists_path %> |
+     <%= link_to 'Badges', admin_badges_path %> |
+     <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
   </div>
 </div>

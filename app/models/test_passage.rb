@@ -4,7 +4,11 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
   
   before_validation :before_validation_set_first_question, on: :create
-
+  
+  def passed?
+    result >= 85 ? self.update(success: true) : false
+  end
+    
   def completed?
     current_question.nil?
   end
@@ -29,6 +33,14 @@ class TestPassage < ApplicationRecord
 
   def number_current_question
     test.questions.order(:id).where('id < ?', current_question.id).count + 1
+  end
+  
+  def successfully?
+    completed? && passed?
+  end
+
+  def finish!
+    self.current_question = nil
   end
 
   private

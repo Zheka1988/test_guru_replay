@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }, :controllers => { sessions: 'sessions' }
 
+  resources :feedbacks, only: %i[new create]
+  resources :badges, only: :index
+
   resources :tests, only: :index do
     post :start, on: :member
   end
@@ -22,10 +25,15 @@ Rails.application.routes.draw do
       end
       patch :update_inline, on: :member
     end
-    get 'gists/index'
+    # get 'gists/index'
+    resources :gists, only: :index
+
   end
 
-  resources :feedbacks, only: %i[new create]
+  namespace :admin do
+    resources :badges
+  end
+
 
   get 'feedbacks/new'
   get 'feedbacks/create'
