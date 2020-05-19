@@ -1,6 +1,12 @@
 <div class="row justify-content-md-center">
-  <div class="col-md-auto">
-    <h1 class="text-center text-muted text-sm">Тест: <%= @test_passage.test.title %></h1>
+  <div class="col-md-auto">   
+    <h3 class="text-center text-muted text-sm">Тест: <%= t('.header', title: @test_passage.test.title) %></h3>
+    <p>
+      <% if @test_passage.test.timer? %>
+        Time left: <%= content_tag :span, '', class: 'timer', data: { timer:  @test_passage.time_left } %>
+      <% end %>
+    </p>
+
     <div class = "text-sm-left text-info">
       <p>Всего <%= @test_passage.test.questions.count %> вопросов. Вопрос № <%= @test_passage.number_current_question%> 
       </p>          
@@ -10,7 +16,7 @@
     </b>
 
     <div class="form-check">
-      <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |f| %> 
+      <%= form_with url: test_passage_path(@test_passage), local: true, id: :check, method: :put do |f| %> 
         <%= f.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %> 
           <%= b.check_box id: "answer_ids_#{b.object_id}" %>
           <%= b.label id: "answer_ids_#{b.object.id}" %> <br>
