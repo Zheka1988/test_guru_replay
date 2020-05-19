@@ -72,9 +72,8 @@ ru:
     #           blank: 'Не может быть пустым'
     errors:
       messages:
-        blank: "не может быть пустым"
-        restriction: 'Ограничение'
-        
+        blank: "не может быть пустым"   
+
     models:
       test: 'Тест'
 

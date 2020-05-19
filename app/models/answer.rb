@@ -8,6 +8,7 @@ class Answer < ApplicationRecord
 
   private
   def validate_count_answer
-    errors.add(:restriction, 'Максимум 4 ответа') if question.answers.count >= 4
+    # errors.add(:restriction, 'Максимум 4 ответа') if question.answers.count >= 4
+    errors.add(:restriction, 'Ограничение максимум 4 ответа') if question.answers.count >= 4
   end
 end
